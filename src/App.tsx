@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [newTodo, setNewTodo] = useState<string>('');
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingText, setEditingText] = useState<string>('');
-  const [mutationType, setMutationType] = useState<'add' | 'edit'>('edit');
+  const [mutationType, setMutationType] = useState<'add' | 'edit'>('add');
 
   useEffect(() => {
     const storedTodos = localStorage.getItem('todos');
