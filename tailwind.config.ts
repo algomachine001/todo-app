@@ -27,6 +27,12 @@ export default {
         'custom-black-shadow': '0px 4px 4px 0px #0000001A',
         right: '4px 0px 4px 0px #00000026',
       },
+      textShadow: {
+        default: '2px 2px 4px rgba(0, 0, 0, 0.1)', // light shadow
+        md: '2px 2px 6px rgba(0, 0, 0, 0.2)', // medium shadow
+        lg: '4px 4px 10px rgba(0, 0, 0, 0.3)', // large shadow
+        xl: '6px 6px 15px rgba(0, 0, 0, 0.4)', // extra-large shadow
+      },
     },
   },
   plugins: [],

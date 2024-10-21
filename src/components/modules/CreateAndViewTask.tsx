@@ -5,6 +5,7 @@ import Completed from './../../assets/checked.svg';
 import Incomplete from './../../assets/Incomplete.svg';
 import clsx from 'clsx';
 import { Todo } from '../../App';
+import UserInfo from '../elements/UserInfo';
 
 type CreateAndViewTaskProps = {
   toggleComplete: (id: number) => void;
@@ -30,12 +31,7 @@ const CreateAndViewTask = ({
     <div className="w-[414px] shadow-right">
       <NavBar
         component={
-          <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
-            aliquid iure id quidem excepturi necessitatibus pariatur ratione
-            molestias dolore! Molestiae culpa dolorem eveniet! Provident rerum
-            ut facere praesentium expedita iusto?
-          </div>
+          <UserInfo username="Jhon" details=" What are your plans for today?" />
         }
       />
 
@@ -51,7 +47,6 @@ const CreateAndViewTask = ({
               {editingId === todo.id ? (
                 <>
                   <p>{editingText}</p>
-                  {/* <button onClick={() => saveEdit(todo.id)}>Save</button> */}
                 </>
               ) : (
                 <>
@@ -84,7 +79,10 @@ const CreateAndViewTask = ({
 
                   <button
                     className="border border-[#071D55] rounded-[4px] p-2 font-medium"
-                    onClick={() => startEditing(todo.id, todo.text)}
+                    onClick={() => {
+                      handleMutationType('edit');
+                      startEditing(todo.id, todo.text);
+                    }}
                   >
                     Edit
                   </button>

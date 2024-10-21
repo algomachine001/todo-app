@@ -26,9 +26,13 @@ const EditTask = ({
   mutationType,
 }: EditTaskProps) => {
   return (
-    <div className="w-[635px]">
+    <div className="w-[648px]">
       <NavBar
-        component={<p>{mutationType === 'edit' ? 'Edit' : 'Add'} Task </p>}
+        component={
+          <p className="font-medium text-white text-2xl text-shadow">
+            {mutationType === 'edit' ? 'Edit' : 'Add'} Task{' '}
+          </p>
+        }
       />
       <div className="pl-4 py-6 pr-5 flex flex-col justify-between flex-grow h-[720px]">
         <div>
@@ -38,7 +42,9 @@ const EditTask = ({
               className="w-[596px] h-[69px] border-2 border-[#CBCBCB] rounded-md px-6 placeholder:text-blue-secondary placeholder:text-[20px]"
               type="text"
               value={editingText}
-              onChange={(e) => setEditingText(e.target.value)}
+              onChange={(e) => {
+                setEditingText(e.target.value);
+              }}
             />
           ) : (
             <>
